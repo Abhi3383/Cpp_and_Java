@@ -14,18 +14,19 @@ class calculator {
 
 public class input_Scanner {
     public static void main(String args[]) {
-        Scanner sc = new Scanner(System.in);
-        int num1 = sc.nextInt();
-        int num2 = sc.nextInt();
-        int num3 = sc.nextInt();
+        try (Scanner sc = new Scanner(System.in)) {
+            int num1 = sc.nextInt();
+            int num2 = sc.nextInt();
+            int num3 = sc.nextInt();
 
-        calculator calc = new calculator();
+            calculator calc = new calculator();
 
-        int result = calc.add(num1, num2);
-        System.out.println("result : " + result);
+            int result = calc.add(num1, num2);
+            System.out.println("result : " + result);
 
-        int results = calc.add(num1, num2, num3);
-        System.out.println("result : " + results);
+            int results = calc.add(num1, num2, num3);
+            System.out.println("result : " + results);
+        }
     }
 
 }
