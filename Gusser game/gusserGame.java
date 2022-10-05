@@ -20,7 +20,6 @@ class player {
         System.out.println("Player kindly guess the number");
         pguessNum = sc.nextInt();
         return pguessNum;
-
     }
 }
 
