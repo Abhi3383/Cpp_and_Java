@@ -5,9 +5,9 @@ class guesser {
 
     public int guessNumber() {
         Scanner sc = new Scanner(System.in);
+        ;
         System.out.println("Guesser kindly guess the number.");
         guessNum = sc.nextInt();
-
         return guessNum;
     }
 }
@@ -19,8 +19,8 @@ class player {
         Scanner sc = new Scanner(System.in);
         System.out.println("Player kindly guess the number");
         pguessNum = sc.nextInt();
-
         return pguessNum;
+
     }
 }
 
