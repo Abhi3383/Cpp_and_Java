@@ -1,0 +1,36 @@
+/*
+->  *&->gets cancelled when put with each other
+->  In C call by address and call by refrence is same thing
+     int a = 5,b = 6;
+     f2(&a,& b);
+     void f2(int *p,int *q){
+
+
+     }
+
+-> In C++ call by address and call by refrence are diffrent thing
+  ->Call by address
+  in call by address value of *p can be changed we can write
+  p=&a;
+  p=&b;
+  p=&c;....etc
+
+     int a = 5,b = 6;
+     f2(&a,& b);
+     void f2(int *p,int *q){
+
+
+     }
+  ->Call by refrence(SYNTAX: int &m=x;)
+  in call by refrence value of &m cant be changed we cant write &m=p;❌
+     int a = 5,b = 6;
+     f2(a,b);
+     void f2(int &p,int &q){
+
+
+     }
+
+-> scanf("%d",&x); // getting passed as address
+   cin >> x; //getting passed as refrence
+   cout << x; //getting passed as value
+*/

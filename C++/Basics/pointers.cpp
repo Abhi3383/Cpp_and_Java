@@ -1,3 +1,9 @@
+/*
+call by value : void f1(int,int);
+call by address : void f2(int*,int*);
+call by refrence : void f3(int &,int&);
+*/
+
 #include <stdio.h>
 
 void input(int *, int);
