@@ -65,4 +65,20 @@ what is new in c++ structure?
 2 structure can have functions too as members
 3 use of access specifiers for the members of structure.
 
+->Encapsulation
+Act of combining properties and methods related to the same entity is know as Encapsulation
+
+->Data Hiding
+securing encapsulated data
+
+->Access specifiers
+- private
+- protected
+- public
+
+Book - structure
+b1 - object
+state of an object should only be changed via methods of that object
+set of property values in an object is called its state . (for eg in b1 object there is bookid, title, price and now bookid, title, price are called property value)
+
 */

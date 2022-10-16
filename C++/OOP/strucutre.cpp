@@ -3,9 +3,12 @@ using namespace std;
 
 struct Book
 {
+private:
     int bookid;
     char title[20];
     float price;
+
+public:
     void displayBook()
     {
         cout << "\n"
@@ -28,11 +31,8 @@ struct Book
 int main()
 {
     Book b1, b2, b3;
-
-    b2.bookid = -2;
-    strcpy(b2.title, "C++"); // to put string in title
-    b2.price = 324.0f;
-
+    b1.inputBook();
+    b2.inputBook();
     b3.inputBook();
     b1.displayBook();
     b2.displayBook();
