@@ -33,4 +33,36 @@
 -> scanf("%d",&x); // getting passed as address
    cin >> x; //getting passed as refrence
    cout << x; //getting passed as value
+
+-> Early Binding
+The binding which can be resolved at compile time by the compiler is known as static or early binding.
+Binding of all the static, private and final methods is done at compile-time.
+Early binding refers first compilation of the program .
+The job of compiler to bind (map) a function call with appropriate function definition is called Early Binding .
+
+-> How compiler performs early binding
+1. Compiler encounters with a function Call
+2. Compiler searches the function on the basis of the name of the fucntion
+If it founds multiple functions with that name then compiler pick all of them
+and say them candidates.
+3.In order to select the most appropriate candidate to map the fucntion call,
+compiler uses 3-step rule.
+s1- Exact match
+s2- Type promotion(char -> int ; float -> double)
+s3- Type conversion(Primitive data type to primitive data type like char -> int,float,double or int->char,float,double,etc.)
+
+
+-> Primitive data types- int char float double etc.(keywords)
+   Non-Primitive data types- Book student customer employee
+
+-> Strucutr in C
+1 structure can be a collection of dissimilar elements .
+2 structure is a way to group variables.
+3 Defining structure is creating custom data type
+
+what is new in c++ structure?
+1.use of struct keyword is optional on every use of non primitive type
+2 structure can have functions too as members
+3 use of access specifiers for the members of structure.
+
 */
