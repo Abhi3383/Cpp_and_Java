@@ -1,15 +1,21 @@
-
-class Telusko{
+class Telusko {
     String name;
     int age;
-}
-class Alien extends Telusko{
 
+    Telusko() {
+        System.out.println("Parent class");
+    }
 }
-public class inherit{
-    public static void main(String agrs[]){
-        
-        Alien a=new Alien();
-        a.name="Alien";
+
+class Alien extends Telusko {
+    Alien() {
+        System.out.println("Child class");
+    }
+}
+
+public class inherit {
+    public static void main(String agrs[]) {
+
+        Alien a = new Alien();
     }
 }

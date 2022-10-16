@@ -3,5 +3,8 @@
         "*.html": "html",
         "iostream": "cpp",
         "chrono": "c"
-    }
+    },
+
+    "editor.formatOnSave": true,
+
 }
