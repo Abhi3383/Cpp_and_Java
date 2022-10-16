@@ -2,9 +2,9 @@ import java.util.*;
 
 class guesser {
     int guessNum;
+    Scanner sc = new Scanner(System.in);
 
     public int guessNumber() {
-        Scanner sc = new Scanner(System.in);
         System.out.println("Guesser kindly guess the number.");
         guessNum = sc.nextInt();
         return guessNum;
@@ -13,9 +13,9 @@ class guesser {
 
 class player {
     int pguessNum;
+    Scanner sc = new Scanner(System.in);
 
     public int guessNumber() {
-        Scanner sc = new Scanner(System.in);
         System.out.println("Player kindly guess the number");
         pguessNum = sc.nextInt();
         return pguessNum;

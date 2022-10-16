@@ -26,6 +26,6 @@ class Y extends X {
 
 public class superDemo {
     public static void main(String args[]) {
-        Y obj = new Y(7);
+        new Y(7);
     }
 }
