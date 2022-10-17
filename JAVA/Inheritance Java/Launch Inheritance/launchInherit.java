@@ -1,4 +1,4 @@
-//methods which are same like function public void fly(){} are called over-ridden methods.
+//methods which are same in parent class and child class like function public void fly(){} are called over-ridden methods.
 //methods which are not present in parent class but are present only in child class like function public void carryPassenger() {}, public void carryGoods() {} are called specialized method.
 //methods which are present in parent class and you are not writing it in child class but it is present in child class in backend are called inherited methods.
 
@@ -44,7 +44,7 @@ public class launchInherit {
         Plane dp = new cargoPlane();
         dp.fly();
         dp.takeOff();
-        ((cargoPlane) cp).carryGoods(); // Downcasting -> changing the behaviour of the parent to act like a child
+        ((cargoPlane) dp).carryGoods(); // Downcasting -> changing the behaviour of the parent to act like a child
         System.out.println();
 
         passengerPlane pp = new passengerPlane();

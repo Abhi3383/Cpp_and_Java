@@ -27,7 +27,7 @@ public class immutableStrings {
         // More on concatenation
         String s9 = "hi" + " telusko";
         System.out.println(s9);
-        String s10 = "Abhsihek " + 99;
+        String s10 = "Abhishek " + 99;
         System.out.println(s10);
         String s11 = "College " + 99 + " " + 99 + " " + 10;
         System.out.println(s11);
