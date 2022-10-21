@@ -73,3 +73,11 @@ a function call with appropriate function definition is called Early Binding.
           object
               state of an object should only be changed via methods of that object
                   set of property values in an object is called its state.(for eg in b1 object there is bookid, title, price and now bookid, title, price are called property value)
+
+-> variables inside class are called member variables.
+Variables which has the scope in their entire method and their life longetivity throughout the program is called Static variable. 
+Till a & b will be alive the values inside them will be alive and thats why they are called instance variable.
+
+-> void f1(){
+    int x; // local variable and by default it will have garbage value
+}

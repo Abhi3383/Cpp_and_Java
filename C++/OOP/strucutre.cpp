@@ -16,7 +16,7 @@ public:
     }
     void inputBook()
     {
-        cout << "\nEnter book id,title,price";
+        cout << "\nEnter book id,title,price : ";
         cin >> bookid;
         if (bookid < 0)
         {
