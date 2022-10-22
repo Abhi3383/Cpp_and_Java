@@ -1,0 +1,7 @@
+Constructor 
+• Constructor is a special member of the class whose name is same as the name ofthe class.
+• Constructor has no return type
+• Constructor is invoked at the time of object creation (automatically )
+• Constructor is an instance member
+• Usually constructor is defined as public member but it can be private also.
+• Programmer has to define constructor, so he can write any code but it is useful to initialize properties ofan object.
