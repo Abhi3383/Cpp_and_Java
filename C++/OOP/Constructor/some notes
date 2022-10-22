@@ -5,3 +5,42 @@ Constructor
 • Constructor is an instance member
 • Usually constructor is defined as public member but it can be private also.
 • Programmer has to define constructor, so he can write any code but it is useful to initialize properties ofan object.
+• We create constructor to avoid the risk of wild pointer and data leakage.
+
+Parameterized constructor
+•You can make a constructor with arguments .
+•constructor arguments are passed at the object creation.
+
+Constructor overloading 
+•Programmer can provide multiple Constructors in the class with different signatures.
+
+Default constructor
+• When programmer doesn't provide explicit constructor in the class , compiler creates an empty body,no argument constructor in the Class
+
+Copy constructor
+• Either programmer has to provide copy constructor in the class or compiler itself provides copy constructor.
+•Copy constructor is invoked for newly created object which is initialized with the objectof the same class
+• Formal argnmcntof copy constructor must be a reference variable of same clan
+
+1) when there is no explicit constructor defined in the class compiler defines two Constructors
+- default constructor
+- copy constructor
+
+2) when there is at least one explicit constructor of any type compiler doesn't provide default constructor
+
+3) when there is explicit copy constructor in the class compiler defines none
+
+Shallow copy - Complex c2=c1; 
+               here we are performing shallow copy constructor
+               both constructor will share same memory block
+               if one object gets affected so other will as well will get affected. 
+
+Deep copy -    Complex c2=c1; 
+               Complex(Complex &c)
+                   {
+                       a = c.a; // a is from c2 and c.a is from c1
+                       b = c.b; // b is from c2 and c.b is from c1
+                   } 
+               here we are performing deep copy constructor
+               both constructor will not the share same memory block
+               if one object gets affected other will not get affected. 
