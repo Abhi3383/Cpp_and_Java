@@ -1,0 +1,33 @@
+->Destructor
+• Destructor is a special member of the class whose name is same as the name of the class but preceded
+  with a tilde (~) symbol .
+• Destructor has no return type
+• Destructor takes no argument therefore overloading of destructor is not possible .
+• Destructor is an instance member
+• Destructor is invoked implicitly when object is about to destroy .
+• The job of destructor should be to free up the memory resources handled by the object.
+• Destructor overloading is not possible because it takes no argument. 
+
+->Implicit Destructor
+• In the absence of explicit destructor, compiler defines an implicit destructor
+in the class.
+
+-> Instance member == object specific
+
+-> A memory region which was created dynamically and it not getting pointed at anything after object destruction and 
+   now it cannot be accessed but it is taking memory in the program is k/a memory leakage.
+   Now till we have the pointer or the object created dynamically we have to free it so for that we use ->  free(p);
+
+       object               
+---------------------------------------------
+|       a                      p            |       p is pointing to the memory location    
+|   --------------        ---------------   |       which was created dynamically  
+|   |            |        |             |   |    -------------------
+|   |            |        |             |   |    |                 |
+|   |            |        |             |   |    |                 |
+|   |            |        |      --------------->|                 |
+|   |            |        |             |   |    |                 |
+|   |            |        |             |   |    |                 | 
+|   |            |        |             |   |    |                 |
+|   -------------         ---------------   |    -------------------   
+---------------------------------------------    

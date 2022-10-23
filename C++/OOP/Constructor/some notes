@@ -31,8 +31,8 @@ Copy constructor
 3) when there is explicit copy constructor in the class compiler defines none
 
 Shallow copy - Complex c2=c1; 
-               here we are performing shallow copy constructor
-               both constructor will share same memory block
+               here we are performing shallow copy constructor.
+               both constructor will share same memory block.
                if one object gets affected so other will as well will get affected. 
 
 Deep copy -    Complex c2=c1; 
@@ -41,6 +41,7 @@ Deep copy -    Complex c2=c1;
                        a = c.a; // a is from c2 and c.a is from c1
                        b = c.b; // b is from c2 and c.b is from c1
                    } 
-               here we are performing deep copy constructor
-               both constructor will not the share same memory block
+               here we are performing deep copy constructor.
+               both constructor will not the share same memory block both will have diffrent memory blocks
+               and the values will be copied from in between the blocks.
                if one object gets affected other will not get affected. 

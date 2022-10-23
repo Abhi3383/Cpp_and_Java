@@ -45,7 +45,7 @@ int main()
     Complex c1(3, 4),
         c2(2),
         c3,
-        c4 = c1;
+        c4 = c1.add(c2);
     c1.showData();
     c2.showData();
     c3.showData();
