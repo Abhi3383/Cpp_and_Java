@@ -89,4 +89,5 @@
         "variant": "cpp"
     },
     "editor.formatOnSave": true,
+    "git.ignoreLimitWarning": true,
 }

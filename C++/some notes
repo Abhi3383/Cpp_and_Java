@@ -1,16 +1,16 @@
 ->*&->gets cancelled when put with each other
-    ->In C call by address and call by refrence is same thing int a = 5,
-                                                                  b = 6;
+        ->In C call by address and call by refrence is same thing int a = 5,
+                                                                      b = 6;
 f2(&a, &b);
 void f2(int *p, int *q)
 {
 
-   }
+    }
 
-   -> In C++ call by address and call by refrence are diffrent thing
-       ->Call by address
-           in call by address value of *p can be changed we can write
-               p = &a;
+    -> In C++ call by address and call by refrence are diffrent thing
+        ->Call by address
+            in call by address value of *p can be changed we can write
+                p = &a;
 p = &b;
 p = &c;
 ....etc
@@ -21,63 +21,79 @@ f2(&a, &b);
 void f2(int *p, int *q)
 {
 
-   }
-   -> Call by
-   refrence(SYNTAX
-            : int &m = x;)
-       in call by refrence value of &m cant be changed we cant write &m = p;
+    }
+    -> Call by
+    refrence(SYNTAX
+             : int &m = x;)
+        in call by refrence value of &m cant be changed we cant write &m = p;
 ❌ int a = 5, b = 6;
 f2(a, b);
 void f2(int &p, int &q)
 {
 
-   }
+    }
 
-   -> scanf("%d", &x); // getting passed as address
-cin >> x;              // getting passed as refrence
-cout << x;             // getting passed as value
+    -> scanf("%d", &x); // getting passed as address
+cin >> x;               // getting passed as refrence
+cout << x;              // getting passed as value
 
 ->Early Binding
-        The binding which can be resolved at compile time by the compiler is known as static or
-    early binding.Binding of all the static,
-    private and final methods is done at compile - time.Early binding refers first compilation of the program.The job of compiler to bind(map)
+The binding which can be resolved at compile time by the compiler is known as static or early binding.Binding of all the static,
+private and final methods is done at compile - time.
+Early binding refers first compilation of the program.The job of compiler to bind(map)
 a function call with appropriate function definition is called Early Binding.
 
-    ->How compiler performs early binding 1. Compiler encounters with a function Call 2. Compiler searches the function on the basis of the name of the fucntion
-        If it founds multiple functions with that name then compiler pick all of them
-            and say them candidates.3.In order to select the most appropriate candidate to map the fucntion call,
-    compiler uses 3 - step rule.s1 - Exact match s2 - Type promotion(char->int; float->double) s3 - Type conversion(Primitive data type to primitive data type like char->int, float, double or int->char, float, double, etc.)
+->How compiler performs early binding 
+1. Compiler encounters with a function Call 
+2. Compiler searches the function on the basis of the name of the fucntion
+If it founds multiple functions with that name then compiler pick all of them and say them candidates .
+3.In order to select the most appropriate candidate to map the fucntion call,
+    compiler uses 3 - step rule.
+    s1 - Exact match 
+    s2 - Type promotion(char->int; float->double) 
+    s3 - Type conversion(Primitive data type to primitive data type like char
+    ->int, float, double or int->char, float, double, etc.)
 
-                                                                                                        ->Primitive data types
-        - int char float double etc.(keywords)Non - Primitive data types - Book student customer employee
+->Primitive data types
+    - int char float double etc.(keywords)Non
+    - Primitive data types
+    - Book student customer employee
 
-                                                                               ->Strucutr in C 1 structure can be a collection of dissimilar elements.2 structure is a way to group variables.3 Defining structure is creating custom data type
+->Strucutre in C 
+1 structure can be a collection of dissimilar elements .
+2 structure is a way to group variables .
+3 Defining structure is creating custom data type
 
-                                                                           what is new in c++ structure
-    ? 1.use of struct keyword is optional on every use of non primitive type
-          2 structure can have functions too as members
-          3 use of access specifiers for the members of structure.
+what is new in c++ structure? 
+1.use of struct keyword is optional on every use of non primitive type
+2 structure can have functions too as members
+3 use of access specifiers for the members of structure.
 
-              ->Encapsulation
-                  Act of combining properties and methods related to the same entity is know as Encapsulation
+->Encapsulation
+Act of combining properties and methods related to the same entity is know as Encapsulation
 
-              ->Data Hiding
-                  securing encapsulated data
+->Data Hiding
+securing encapsulated data
 
-              ->Access specifiers -
-          private - protected - public
+->Access specifiers 
+- private 
+- protected 
+- public
 
-          Book -
-          structure
-              b1 -
-          object
-              state of an object should only be changed via methods of that object
-                  set of property values in an object is called its state.(for eg in b1 object there is bookid, title, price and now bookid, title, price are called property value)
+Book - structure b1 
+    -object state of an object should only be changed via methods of that object set of property values in an object is called its state.
+              (for eg in b1 object there is bookid, title, price and now bookid, title, price are called property value)
 
--> variables inside class are called member variables.
-Variables which has the scope in their entire method and their life longetivity throughout the program is called Static variable. 
+->variables inside class are called member variables.Variables which has the scope in their entire method and their life longetivity throughout the program is called Static variable.
 Till a & b will be alive the values inside them will be alive and thats why they are called instance variable.
-
--> void f1(){
+->void f1()
+{
     int x; // local variable and by default it will have garbage value
-}
+    }
+
+-> int z = 5;         ->initialization, it is a function
+                      ->will call constructor
+                      ->particularly parameterized constructor
+       z = 5;         ->assignment 
+       int x;         ->by default garbage value will be there
+                      ->default constructor will be called

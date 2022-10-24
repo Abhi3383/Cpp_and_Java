@@ -16,13 +16,6 @@ public:
         a = x;
         b = y;
     }
-
-    // in copy constructor parameters are passed as refrence.
-    Complex(Complex &c)
-    {
-        a = c.a; // a is from c4 and c.a is from c1
-        b = c.b; // b is from c4 and c.b is from c1
-    }
     void set(int x, int y)
     {
         a = x;
@@ -33,7 +26,7 @@ public:
         cout << "\nreal = " << a << " , "
              << "img  = " << b;
     }
-    Complex add(Complex c)
+    Complex operator+(Complex c) // member function
     {
         Complex temp(0, 0);
         temp.a = a + c.a;
@@ -44,13 +37,15 @@ public:
 
 int main()
 {
-    Complex c1(3, 4), c3;
-    Complex c4 = c1; // this line is copy constructor
-    // c1's refrence is getting passed and it is going to c
-    // c is going to represent c1 but c is not a object
-    // rather c is just like another name of c1
+    Complex c1, c2, c3;
+    c1.set(3, 4);
+    c2.set(5, 6);
+    c3 = c1 + c2; // another way of writing it is
+                  // c3 = c1.operator+(c2);
+                  // c1 called + and c2 is geting passed as an argument
+                  // then whatever + returned is getting saved in c3.
     c1.showData();
+    c2.showData();
     c3.showData();
-    c4.showData();
     return 0;
 }
