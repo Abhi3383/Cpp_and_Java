@@ -1,0 +1,35 @@
+👉Friend function
+• Friend function is not a member of a class to which it is a friend
+• function which is friend to a class can access any member of the class (private , protected or public)
+
+👉Making a function friend to a class
+• Function needs to be declared with friend keyoword in the class to which we wantto make it a friend .
+• Friend function is defined outside the class without membership label ,as it is not a member function
+• Remember friend function can be a member to another class ,so membership label is required while defining outside all the classes.
+• You can declare friend function without bothering  access specifier because it is not a member, so no impact of access specifier on it.
+• A function which is a friend to some class can be
+→ a non member function ,or
+→ a member of same class
+
+• if friend function is an absolute non-member Function then you can invoke it like any other function
+           functionName ( ) ;
+• it friend function is a member to same class , then you can invoke it using objectof the class
+          objectName.FunctionName() ;
+• Member function can access properties of current object directly , but friend function needs an object to access its properties or methods
+• A function can be a member to zero or one class and friend to Zero or many classes
+
+👉Defining friend operator
+
+- friend Complex operator + (complex ,complex) ;
+- friend complex operator - (complex);
+
+👉Difference between defining operator as a member and a friend
+
+- Jab operator Ko as a member banate ho , tab jitne arguments dete no ,-Usse exactly ex jyada argument pass Karna padega agar friend
+  banoge .Kyunki jo Kabhi caller object tha use bhi pass Karna padega
+
+👉Benefits of friend
+
+• Function can be a friend to multiple classes , which makes it possible to access private members of multiple classes in the same functionality.
+• With the friend operator it is possible to overload a binary operator in which left operand is not an object.
+• various operators can only be defined using friend

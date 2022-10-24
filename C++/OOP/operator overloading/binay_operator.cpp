@@ -11,26 +11,10 @@ public:
         a = 0;
         b = 0;
     }
-    Complex(int x)
-    {
-        a = x;
-        b = 0;
-    }
     Complex(int x, int y)
     {
         a = x;
         b = y;
-    }
-
-    // in copy constructor parameters are passed as refrence.
-    Complex(Complex &c)
-    {
-        a = c.a; // a is from c4 and c.a is from c1
-        b = c.b; // b is from c4 and c.b is from c1
-    }
-    ~Complex()
-    {
-        cout << "\nbye"; // 5 objects 5 times bye will get printed
     }
     void set(int x, int y)
     {
@@ -42,7 +26,7 @@ public:
         cout << "\nreal = " << a << " , "
              << "img  = " << b;
     }
-    Complex add(Complex c)
+    Complex operator+(Complex c)
     {
         Complex temp(0, 0);
         temp.a = a + c.a;
@@ -53,8 +37,13 @@ public:
 
 int main()
 {
-    Complex c1(3, 4), c2(2, 1), c3(2), c4;
-    Complex c5 = c1;
+    Complex c1, c2, c3;
+    c1.set(3, 4);
+    c2.set(5, 6);
+    c3 = c1 + c2; // another way of writing it is
+                  // c3 = c1.operator+(c2);
+                  // c1 called + and c2 is geting passed as an argument
+                  // then whatever + returned is getting saved in c3.
     c1.showData();
     c2.showData();
     c3.showData();

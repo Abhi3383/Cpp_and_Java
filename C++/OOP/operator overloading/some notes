@@ -1,0 +1,36 @@
+👉Operator overloading
+- We can define operators for classes.
+- we can provide operator definition in the class so that it works in a specific way for the objects of that class
+- operator overloading is defining new meaning of the operator.
+  Now one operator symbol has more than one meaning depending on type of data used by the operator .
+- One operator symbol is overloaded with multiple interpretation is known as operator overloading.
+- which interpretation of operator has to be considered is resortred at compile time on the basis of operands of the operator. 
+- Therefore it is compile time polymorphism .
+
+👉Operators that cannot be overloaded
+::                             scope resolution
+sizeof()                       size of
+? :                            conditional operator
+•                              member access
+•*                             pointer to member
+
+Only those operators can be overloaded in C++ which are valid operators in C language.
+
+👉Overloading of Binary Operator
+ 
+      c3=c1+c2;
+          ^
+          |   
+Always left operand is caller object in the case of overloading of binary operators.
+
+👉Overloading of Unary operator
+
+• Overloading unary - operator for complex.
+
+• Overload unary - c3= -c1+c2
+                   c1.operator-()
+                   temp.operator+(c2)
+                     object
+
+👉 sizeof() operator cant be overloaded bcz since it returns size and   
+   theres no meaning of modification. 
