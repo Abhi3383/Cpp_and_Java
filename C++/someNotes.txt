@@ -97,3 +97,15 @@ Till a & b will be alive the values inside them will be alive and thats why they
        z = 5;         ->assignment 
        int x;         ->by default garbage value will be there
                       ->default constructor will be called
+
+-> ostream &os = cout; - if we write something like this then it means cout is same as os
+                       - its just we are only changing the name from cout to os
+                       - so instead of writing cout <<"Hello";
+                         we are now writing os<<"Hello"; 
+
+   ostrem os = cout; - it means we trying to create onject os and trying to assign cout
+                       which is not allowed
+
+-> In friend function we have to pass 1 extra parameter.
+   In member function we have to pass 1 less parameter.
+

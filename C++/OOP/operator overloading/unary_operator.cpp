@@ -58,5 +58,7 @@ int main()
     // c3 called -(minus) operator then whatever -(minus) returned
     // has been assigned to c4
     c4.showData();
+    Complex c5 = -c4 + c3;
+    c5.showData();
     return 0;
 }
