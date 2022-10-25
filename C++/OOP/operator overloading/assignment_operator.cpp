@@ -100,5 +100,10 @@ int main()
 
     s1 = s1;
     s1.display();
+
+    myString s5;
+    s5 = s4;
+    s4 = s1;
+    s5.display();
     return 0;
 }
