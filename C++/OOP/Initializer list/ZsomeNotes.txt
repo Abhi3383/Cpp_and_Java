@@ -1,0 +1,34 @@
+Initializer list
+. For Initialization of non-static members
+. For Initialization of refrence members
+. For Initialization of member objects which do not have default constructor
+. For Initialization of base class members.
+. When constructor's parameter name is same as data member
+. For performance reasons.
+
+One way to put put values in Paramterized constructor is :
+ class ABC
+{
+    int x,y;
+    public:
+           ABC(int a,int b){
+            x=a;
+            y=b;
+           }
+};
+
+Another way of doing it using Initializer list is
+
+ABC(int a,int b):x(a),y(b)
+{
+
+      //body
+
+}
+
+The lines in which we know we have to initialize like
+const int y=5;
+int &z = y;
+ABC a1 = 5;
+but the values can be changed or it should be through constructor so
+we give this work to Initializer

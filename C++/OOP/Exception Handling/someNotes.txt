@@ -1,0 +1,16 @@
+👉Exception Handling
+-> why do we do it ?
+- In a very big program a programmer can not think each and every corner cases.
+  So to deal with errors and corner cases we perfrom Exception Handling.
+- We do it by
+    try
+    throw 
+    catch
+- C++ provides the following specialized keywords for this purpose:
+
+  try: Represents a block of code that can throw an exception. 
+          
+  catch: Represents a block of code that is executed when a particular exception is thrown.
+       
+  throw: Used to throw an exception. Also used to list the exceptions that a function throws but
+  doesn’t handle itself.    
