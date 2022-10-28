@@ -1,0 +1,295 @@
+Pointers - They are not just used to store address.
+         - They can also be used to defrence these addresses so that we can  
+           access and modify the value in these addresses.
+         - If we declare a value pointer like int *p;
+           and if we print p then it will print of which to it is pointing
+           but if we print *p it will the vaue of which it was pointing to
+
+👉Void pointer - Generic pointer
+       - Dont need to do explicit type casting in void pointer
+       - This particular data type is not mapped to a particular data type
+         we cant derefrence(obtain the address of a data item held in another location from (a pointer).) t
+         his particular pointer.
+
+                   int a = 1025;
+                   int *p;
+                   p = &a;
+                   void *p0;
+                   p0=p;
+                   printf("Address = %d, Value = %d",*p0);
+
+         Since, its not pointing to anything it will generate error
+         WE can only print address
+
+                   printf("Address = %d, Value = %d",p0); <- valid
+
+         Now again in this also we cannot do arithmatic operation
+
+                   printf("Address = %d, Value = %d",p0+1); <- in-valid
+
+
+👉Pointer to pointer
+
+int x=5;
+int *p;
+p = &x;
+- &x gives the addres of variable
+- filled the address of x in p 
+  and thats how p points to x
+
+
+      201 202 205     215                 225
+        -|-|---|--------|-------------------|-----------------
+          |||||||||||||| 225 ||||||||||||||  x  ||||||||||||||=>
+        ------------------------------------------------------
+                          p                  x
+                  pointer to integer       integer
+                        int *              int
+                          ^                  |
+                          |                  |
+                          --------------------
+
+int **q;
+q = &p;
+- variable q can store the address of p.
+
+      201 202 205            215                225
+        -|-|---|--------------|----------------- |-----------------
+          |||  21  ||||||||| 225 ||||||||||||||  6  ||||||||||||||=>
+        ------------------------------------------------------
+               q   ------->   p                  x
+               ^   |     pointer to integer    integer
+               |   |           ^                  |
+            int ** |           |                  |
+               |   |           --------------------
+               |   |     q pointing to p
+               |   |     q storing the address to p
+               ----
+
+Similarly we can go on
+int*** r;
+r = &q; -> will store the address of q
+
+👉 Applications Memory
+
+   -------------------------------
+   |                             |
+   |           Heap              |
+   |                             |
+   |                             |
+   |                             |
+   |                             |
+   |                             |
+   -------------------------------
+   |                             | <- decalration of variables,
+   |          Stack              |    main() and all gets done here
+   -------------------------------   
+   |                             |
+   |       Static/Global         |
+   |                             |
+   -------------------------------
+   |                             |
+   |           Code(text)        |
+   |                             |
+   -------------------------------
+
+   👉 Pointer as function arguments - Call by refrence
+                                     - As we pass the pointer such as int *p in parameters it is poiting to something
+                                       and then it will change its value
+                                     - but when we pass formal arguments as parameters such as int p
+                                       it will just create the copy of that variable and the changes will be done in formal parameters only
+                                       it will not be seen or entertained in actual parameters when called
+ 
+ 👉Pointer and Arrays
+
+ 
+            ^
+            |
+   |      Memory        |
+   |                    |
+   ----------------------
+   |      A[4]          | 216
+   ----------------------
+   |      A[3]          | 212
+   ----------------------
+   |      A[2]          | 208
+   ----------------------
+   |      A[1]          | 204
+   ----------------------
+   |      A[4]          | 200
+   ----------------------
+   |                    |
+   |                    |
+
+                  200     204      208     212      216                 300     304
+            -----------------------------------------------------------------------------
+                |  2    |  4    |  5   |   8     |   1     |          |   5  |      | =>
+            ------------------------------------------------------------------------------
+                  A[0]     A[1]   A[2]      A[3]     A[4]                 x
+
+                  int x=5;
+                  int *p ;
+                  p = &x;
+                  print p;  //300
+                  print *p; //5
+                  p = p+1;  //304
+                  print p;  //304
+                  print *p  //garbage value
+
+                  but if we do
+
+                  int A[5];
+                  int *p;
+                  p = &A[0];  //we can also write
+                              // p = A;
+                              // print A; ->will just give the address of A[0] //200
+                  print A+1 ; //204
+                  print *A;   //2
+                  print p;    //200
+                  print *p;   //2
+                  print p+2;  //208
+                  print *(p+2)//5
+
+👉Element at index i -> Address - &A[i] or (A+i)
+                      -> Value   - A[i]  or *(A+i)
+  
+👉Number of Element in the array - int A[] = {1,2,3,4,5};
+                                   int size = sizeof(A); // 5 elemets * 4 (bcz each element is of 4 byte)  = 20
+                                   int NoOfElement = sizeof(A) / sizeof(A[0]);
+
+👉Character Arrays and Pointers
+String - group of characters
+ 1)How to store strings
+   size of array >= no. of characters in strig + 1(NULL character which has ascii value 0 -> '\0')
+
+ 2) Arrays and Pointers are diffrent types that are used in similar manner
+
+ char c1[6] = "Hello";
+ char* c2;
+ c2 = c1;
+ print c2[1]; //e
+ c2[0] = 'A' //"Aello"
+
+ //c2[i] is *(c2+i)
+
+                  200     204      208     212      216       220
+            ------------------------------------------------------------
+                |  H    |  E    |  L   |   L     |   O     | \0   |   =>
+            ------------------------------------------------------------
+                  C[0]     C[1]   C[2]     C[3]     C[4]
+                    ^
+                    |
+                  -----
+            400  | 200 |
+                  -----
+                   c2
+
+3) Arrays are always passed to function by refrence
+
+👉For 2-d Array
+-> B[i][j] = *(B[i]+j);
+           = *(*(B+i)+j);
+-> B or &B[0]
+-> *B or B[0] or &B[0][0]
+-> B+1 or &B[1]
+-> *(B+1) or B[1] or &B[1][0]
+-> *(B+1)+2 or B[1]+2 or &B[1][2]
+
+👉 Heap   -> Heap is called dynamic Memory   
+          -> Memory allocation using heap is called Dynamic Memory allocation.
+          -> allocating large chunks or memory or keeping variable in the memory till
+             the time we want we have HEAP. HEAP is pool of free of large memory.
+          -> Unlike stack applications HEAP is not fixed. Its size can vary during the lifetime
+             of the application and there is no set rule for allocation and deallocation of memory
+          -> A programmer can totally control how much memory to use from the heap till what time to keeping
+             the data in the memory during the applications lifetime
+          -> Heap can grow as long as you do not run out of memory.
+          -> Heap allocation can be done by 
+          1) In C using : malloc , calloc , realloc , free
+          2) In C++ using : new , delete
+
+
+👉In C: Allocate block of memory : Malloc, calloc ,realloc
+         DeAllocate block of memory : free
+  In C++: Allocate block of memory : new
+          DeAllocate block of memory : delete
+
+
+👉Malloc -> int a; // goes on stack
+            int *p;
+            p = (int *)malloc(sizeof(int));
+             malloc function asks for how much memory to allocate in bytes
+             sizeof(int) we are saying give a block of memory which is 4 bytes(which is size of integer).
+             malloc will return a pointer to the starting address of the block
+             and malloc return a void pointer.
+             malloc looks for free space in the heap book set or reserved set and give back to the pointer
+             and the only way you can access this particular block by keeping a pointer variable which will be local
+             we have done typeCasting here because malloc return pointer to void pointer and p is an intger pointer.
+             now p stores the address of this block of memory.
+             sizeof(int) -> store a block of memory in heap
+             int * -> pointing to the address in the heap from the stack since malloc returns void pointer and we cannot access
+                      it so first we converted it into integer pointer using typecasting then we store the address of the block of memory
+                     which is in heap using pointer varaible who will be pointing to the address from the stack.
+              *p = 10;
+              printf("Address = %d, Value = %d", p, *p);
+
+               if we again aloocate the memory using same pointer variable then it will create new block of memory with another address instead of
+               over riding and changing the previously allocated address and value
+               It will not be cleared off automatically
+               Which is an unnecessary consumption of memory.
+              p = (int *)malloc(sizeof(int));
+              *p = 20;
+              printf("\nAddress = %d, Value = %d", p, *p);
+
+               So once we are done using a particualar block memory we should have made a call to the function "free"
+               So that any memory which is allocated using malloc is cleared off
+              free(p);
+              p = (int *)malloc(20 * sizeof(int));
+              *p = 30;
+              printf("\nAddress = %d, Value = %d", p, *p);
+        
+         -> void * malloc(size_t size)
+            
+            This function as arguments asks you for the size of the memory block in bytes.
+            This datatype size_t  stores all the positive intger values. So we can think it of as usigned integer data type,
+            the size cannot be negative value it cannot either be zero or positive value.
+            Malloc returns a void pointer that gives us the address of first byte in this block of memory that it allocates.
+        -> Malloc initializes the memory that it allocates to garbage value.  
+
+
+
+
+👉Calloc - Calloc is mostly same as malloc
+          - Calloc also returs void pointer. 
+            But calloc takes 2 arguments instead of one argument.
+            The first argument is the number of elements of a particular data type
+            and the second argument is the size of the data type.
+
+            void * calloc(size_t num, size_t size);
+            eg: int *p = (int *) calloc(3,sizeof(int));
+                                        ^    ^
+                                        |    |
+                                    (no of   (size of datatype
+                                  elements)  in bytes)
+          -> Calloc initializes the memory that it allocates to zero.
+
+
+
+👉Realloc - If you have a dynamically allocated block of memory and if you want to change the size of this block of memory, then you can use realloc.
+           
+           - Realloc takes 2 arguments.
+             The first argument is poiting to the starting address of the existing block.
+             and the second argument is the size of the new block.
+
+          - void * realloc(void * ptr, size_t size);
+            
+            but if want block of memory larger than the size of the previous block. 
+            In that case, machine may create entire new block and copy the previous data,
+            whatever bytes was written in the previous block to the new block.
+            If contiguous or consecutive memory is already avaliable with the existing block then the existing block may also be extended.
+          -> Realloc initializes the memory that it allocates to garbage value.
+
+👉Pointers - Can point to functions
+            - Can to data
+
+👉Memory leak - Caused by improper use of dynamic memory location or the memory on the heap or memory heap.
