@@ -1,0 +1,34 @@
+👉                Introduction to Templates
+
+-> Templates in C++ is defined as a blueprint or formula for creating a generic class or a function.
+-> We can create a single function or single class to work with different data types using templates.
+-> It is also known as generic functions or classes.
+-> Templates in C++ works in such a way that it gets expanded at compierme just like macros and allows
+   a function or class to work on different data types without being rewritten.
+->  Macros: Macros are a piece of code in a
+    program which is given some name.
+    Whenever this name is encountered by the
+    compiler the compiler replaces the name
+    with the actual piece of code. The #define
+    directive is used to define a macro
+  
+    For Example:
+    #define LIMIT 5
+
+👉                Class Templates
+-> Class templates are useful when a class defines something that is independent of the data type. 
+-> Can be useful for classes like Linked List, Binary Tree, Stack, Queue, Array, etc.
+-> Syntax of Class Template:
+
+            template<class Type>
+            class class_name{
+            // class body;
+            }
+
+   * Here Type is a placeholder type name, which will be
+     specified when a class instantiated.
+
+👉          Multiple and Default Templates
+Syntax of Functions Template:
+
+template<class T=float, class F=int>
