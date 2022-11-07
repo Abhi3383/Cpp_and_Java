@@ -1,0 +1,276 @@
+👉          STL Standard Template Libray
+-> The C++ STL (Standard Template Library) is a powerful set of C++ template classes to provide general-purpose classes and functions 
+   with templates that implement many popular and commonly used algorithms and data structures like vectors, lists, queues, and stacks.
+
+->COMPONENTS OF STL
+✅Containers
+✅iterators
+✅Algorithms
+✅Function Operator
+
+👉                Containers
+-> Containers can be described as the objects that hold the data of the same type. 
+   Containers are used to implement different data structures for example arrays, list, trees, etc.
+
+->List of Few Containers
+✅Vector
+✅List
+✅Set
+✅Multiset
+✅Map
+✅Multimap
+✅Stack
+✅Queue
+✅Priority Queue
+
+👉Classification of Containers
+-> Sequence containers
+->Associative containers
+-> Derived containers
+
+-> Each container class contains a set of functions
+   that can be used to manipulate the contents.
+                        
+                        Container
+        Sequence container       Associative container           Derived containers
+        
+        vector                    set                               stack
+        deque                     multiset                          queue
+        list                      map                               priority_queue
+                                  multimap
+        
+👉                                                                  Adaptive Containers
+
+                                                Is order Important --- yes ---> Last In, First out --No-->Last In, First out --No --> priority_queue
+                                                    |                                  |                           | 
+                                                    |                                 yes                         yes
+                                                    |                                  ⬇️                         ⬇️                               
+                                                    No                                Stack                       Queue  
+                                                    |
+                                                    |
+                                                    ⬇️
+                                                Allow Duplicates ?
+                                                    |
+                                ---------------------------------------------------------
+                                |                                                       |
+                                No                                                     yes
+                                |                                                       |
+                            Map key to value                                     Map key to value
+                                |                                                       |
+            -----------------------------------------               ---------------------------------------
+            |                                       |               |                                     |
+            |                                       |               |                                     |
+           yes                                      no              yes                                  No
+            |                                       |               |                                     |
+           ⬇️                                      ⬇️              ⬇️                                   ⬇️
+           Unordered_map                       Ordered_map      Unordered_multiMap                     Unordered_multiSet
+
+
+👉 Iterator
+-> Iterators are pointer-like entities used to access the individual elements in a container.
+-> Iterators are moved sequentially from one element to another element. 
+   This process is known as iterating through a container.
+
+-----------------
+|           1   |
+|  array    2  <--------- vector<int>::iterator
+|           3   |                           ^
+|---------------|                           |
+|size 3         |                         Pointer
+-----------------                       
+
+👉                        Agorithms
+->  Algorithms are the functions used across a variety of containers for processing its contents.
+
+✅Algorithms are not the member functions of a container, but they are the standalone template functions.
+✅Algorithms save a lot of time and effort.
+✅If we want to access the STL algorithms, we must include the <algorithm> header file in our program.
+
+👉                  Function Objects
+-> The STL includes classes that overload the function call operator. Instances of such classes are called function objects or functors. 
+   Functors allow the working of the associated function to be customized with the help of parameters to be passed.
+-> The C++ Standard Library uses function objects primarily as sorting criteria for containers and in algorithms.
+-> Function objects provide two main advantages over a straight function call. 
+   The first is that a function object can contain state. 
+   The second is that a function object is a type and therefore can be used as a template parameter
+
+👉                  Array class in C++
+-> The introduction of array class from C++11 has offered a better alternative for C-style arrays.
+   The advantages of array class over C-style array are
+-> Array classes knows its own size, whereas C-style arrays lack this property. 
+   So when passing to functions, we don't need to pass size of Array as a separate parameter.
+-> Array classes are generally more efficient, light-weight and reliable than C-style arrays.
+
+👉                         Array class in C++
+Operations on array :-
+1. at()-This function is used to access the elements of array.
+2.get()-This function is also used to access the elements of array. 
+        This function is not the member of array class but overloaded function from class tuple.
+3. operator[]- This is similar to C-style arrays. This method is also used to access array elements.
+4. front() -This returns the first element of array.
+5. back()- This returns the last element of array.
+6. size()- It returns the number of elements in array.
+7. max_size() - It returns the maximum number of elements array can hold i.e, the size
+with which array is declared. The size() and max_size() return the same value.
+8. Swap()- The swap() swaps all elements of one array with other.
+9. empty()- This function returns true when the array size is zero else returns false.
+10. fill() -This function is used to fill the entire array with a particular value.
+
+👉                       Vector Container
+-> Vectors are same as dynamic arrays with the ability to resize itself automatically when an element is inserted or deleted, 
+   with their storage being handled automatically by the container.
+
+👉                                    Vector Container
+1.begin()-Returns an iterator pointing to the first element in the vector
+2.endl()-Returns an iterator pointing to the theoretical element that follows the last element
+in the vector
+3.rbegin()-Returns a reverse iterator pointing to the last element in the vector (reverse
+beginning(). It moves from last to first element
+4.rend()- Returns a reverse iterator pointing to the theoretical element preceding the first
+element in the vector (considered as reverse end)
+5.size()-Returns the number of elements in the vector.
+6.max size() - Returns the maximum number of elements that the vector can hold.
+7.capacity()- Returns the size of the storage space currently allocated to the vector expressed
+as number of elements.
+8.resize(n) -Resizes the container so that it contains 'n' elements.
+9.empty()- Returns whether the container is empty.
+10.shrink to fit()- Reduces the capacity of the container to fit its size and destroys all
+elements beyond the capacity.
+11.reserve()-Requests that the vector capacity be at least enough to contain n elements.
+
+Element access:
+1.at(g)- Returns a reference to the element at position 'g' in the vector
+2.front()- Returns a reference to the first element in the vector
+3.back()- Returns a reference to the last element in the vector
+4.data()- Returns a direct pointer to the memory array used internally by the vector to st
+its owned elements.
+
+Modifiers:
+1.assign()-It assigns new value to the vector elements by replacing old ones
+2.push back()- It push the elements into a vector from the back
+3.pop back() - It is used to pop or remove elements from a vector from the back.
+4.insert() - inserts new elements before the element at the specified position
+5.erase()-It is used to remove elements from a container from the specitied position or
+range.
+6.Swapl()-It is used to swap the contents of one vector with another vector of same type.
+Sizes may differ.
+7.clear()-It is used to remove all the elements of the vector container
+
+👉                                  List Container
+->  Lists are sequence containers that allow constant time insert and erase
+    operations anywhere within the sequence, and iteration in both directions.
+✅ List cotainers are implemented as doubly-linked lists;
+    a link to the element preceding it and a link to the element following it.
+✅ They are very similar to forward_list.
+✅ The main difference being that forwardlist objects are single-linked lists, and thus
+    they can only be iterated forwards, in exchange for being somewhat smaller and more efficient.
+
+
+1.front() - Returns the value of the first element in the list.
+2.back() - Returns the value of the last element in the list.
+3.push_front(g) - Adds a new element 'g' at the beginning of the list.
+4.push_back(g) - Adds a new element 'g' at the end of the list.
+5.pop_front() - Removes the first element of the list, and reduces size of the list by 1.
+6.pop_back - Removes the last element of the list, and reduces size of the list by 1.
+
+👉                                     Forward List Container
+
+Forward list in STL implements singly linked list. Introduced from C++11, forward list are
+more useful than other containers in insertion, removal, and moving operations (like sort)
+and allow time constant insertion and removal of elements.
+1. assign(): This function is used to assign values to the forward list, its other variant is used to
+assign repeated elements and using the values of another list.
+2. push_front(): This function is used to insert the element at the first position on forward list.
+fhe value from this function is copied to the space betore first element in the container. The
+size of forward list increases by 1.
+3. pop_front(): This function is used to delete the first element of the list.
+4. insert_after(): This function gives us a choice to insert elements at any position in forward
+list. The arguments in this function are copied at the desired position.
+5. erase_after(): This function is used to erase elements from a particular position in the
+forward list. There are two variants of 'erase after function.
+
+👉                                     Dequeue Container
+Double-ended queues are sequence containers with the feature of expansion and"
+contraction on both ends. They are similar to vectors, but are more efficient in case of
+insertion and deletion of elements. The functions for deque are same as vector, with an
+addition of push and pop operations for both front and back.
+q.size() : 4
+q.max_size(): 4611686018427387903
+q.at(2):10
+q.front () : 15
+q.back() : 30
+q.pop_front (): 20 10 30
+q.pop_back() : 20 10
+
+👉                                             Stack Container
+Stacks are a type of container adaptors with LIFO(Last In First Out) type of working, wrere a
+new element is added at one end (top) and an element is removed from that end only.
+
+The functions associated with stack are:
+empty()- Returns whether the stack is empty -Time Complexity: O(1)
+size()- Returns the size of the stack- Time Complexity: O(1)
+top()- Returns a reference to the top most element of the stack - Time Complexity : O(1)
+push(g)-Adds the element 'g' at the top of the stack Time Complexity: O(1)
+pop()-Deletes the top most element of the stack - Time Complexity: O(1)
+
+👉                                      Queue Container
+Queues are a type of container adaptors which operate in a first in first out(FIFO).
+type of arrangement. Elements are inserted at the back (end) and are deleted fron
+the front.
+
+👉                                       Priority Queue Container
+Priority queues are a type of container adapters, specifically designer sucn tuat
+the first element of the queue is the greatest of all elements in the queue and
+elements are in non increasing order (hence we can see that each element of the
+queue has a priority {fixed order}
+.
+We can pass another parameter whilę creating the priority queue to make it a min heap.
+C++ provides the below syntax for the same.
+
+Syntax:
+priority_queue <int, vector<int>, greater<int>> g = q;
+
+👉                                         Set Container
+-> Sets are a type of associative containers in which each element has to unique
+   because the value of the element identifies it. The values are stored in a specific
+   order.
+✅The set stores the elements in sorted order.
+✅All the elements in a set have unique values.
+✅The value of the element cannot be modified once it is added
+   to the set, though it is possible to remove and then add the
+   modified value of that element. Thus, the values are immutable.
+✅Sets follow the Binary search tree implementation.
+✅The values in a set are unindexed.
+
+
+👉                                    Map Container
+Maps are associative containers that store elements in a mapped fashion. Each
+element has a key and a mapped value. No two mapped values can have same
+key values.
+
+👉                                        Mutimap Container
+Multimap is similar to map with an addition that multiple elements can have same
+keys. Also, it is NOT required that the key value and mapped value pair has to be
+unique in this case. One important thing to note about multimap is that multimap
+keeps all the keys in sorted order always.
+
+👉                                           Unordered Set Container
+An unordered_set is implemented using a hash table where keys are hashed into indices of a
+hash table so that the insertion is always randomized. All operations on
+the unordered_set takes constant time O(1) on an average which can go up to linear
+time O(n) in worst case which depends on the internally used hash function.
+
+The find() function returns an iterator to end() if
+key is not there in set, otherwise an iterator to
+the key position is returned.
+
+👉                   Unordered Map Container
+an unordered_map is like a data structure of dictionary type that stores elements in itself. It
+contains successive pairs (key, value), which allows fast retrieval of an individual element based
+on its unique key.
+
+👉                   Unordered MuitilMap Container
+we can not store duplicates in unordered_map, that is if we have a key-value pair already in our
+unordered_multimap and another pair is inserted, then both will be there whereas in case of
+unordered map the previous value corresponding to the key is updated by the new value that
+is only would be there. Even can exist in unordered_multimap twice.

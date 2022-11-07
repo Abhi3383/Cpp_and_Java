@@ -12,5 +12,12 @@ int main()
     cout << "After popping Top element -> " << s.top() << endl;
     cout << "Size of Stack -> " << s.size() << endl;
     cout << "Empty or not -> " << s.empty() << endl;
+
+    while (!s.empty())
+    {
+        cout << s.top() << " ";
+        s.pop();
+    }
+
     return 0;
 }

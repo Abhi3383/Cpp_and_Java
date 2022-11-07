@@ -13,5 +13,12 @@ int main()
     q.pop();
     cout << "After popping First element -> " << q.front() << endl;
     cout << "Size after pop -> " << q.size() << endl;
+
+    while (!q.empty())
+    {
+        cout << q.front() << " ";
+        q.pop();
+    }
+
     return 0;
 }

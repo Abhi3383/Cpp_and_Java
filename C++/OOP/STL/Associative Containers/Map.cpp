@@ -18,7 +18,6 @@ int main()
 
     m.insert({6, "chota"});
     m.insert({5, "bheem"});
-
     cout << "before erase" << endl;
     for (auto i : m)
     {
@@ -45,5 +44,26 @@ int main()
     {
         cout << (*i).first << " ";
     }
-    cout << endl;
+    cout << endl
+         << endl;
+
+    map<int, int> ms;
+    ms.insert(pair<int, int>(1, 10));
+    ms.insert(pair<int, int>(2, 20));
+    ms.insert(pair<int, int>(3, 30));
+    ms.insert(pair<int, int>(7, 70));
+    ms.insert(pair<int, int>(5, 50));
+
+    ms[9] = 90;
+    ms[10] = 100;
+
+    ms.erase(5);
+
+    ms.insert(pair<int, int>(5, 500));
+    map<int, int>::iterator its;
+    for (its = ms.begin(); its != ms.end(); its++)
+    {
+        cout << "First/Key : " << its->first << " , Second/Value : " << its->second << endl;
+    }
+    return 0;
 }
