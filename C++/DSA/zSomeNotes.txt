@@ -1,0 +1,9 @@
+👉                          Data Type & Data Structure
+
+Data Type -
+1) Pre defined - int, char, float
+2) User Defined - Structure, Union, Class
+
+Data Structure -
+1) Linear - Array, LL, Stack , Queue
+2) Non- Linear - Tree, Graph
