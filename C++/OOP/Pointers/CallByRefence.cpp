@@ -2,7 +2,8 @@
 #include <stdlib.h>
 
 int Add(int *a, int *b)
-{ // Called function
+{
+    // Called function
     // a and b pointer to integers local to ADD
     printf("\nAddress of a in Add = %d , Address of b in Add = %d\n", &a, &b);
     printf("\nValue of a of Add (address of a of main) = %d, Value of b of Add (address of b of main) = %d\n", a, b);

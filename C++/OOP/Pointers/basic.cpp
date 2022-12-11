@@ -22,7 +22,7 @@ int main()
    printf("\n");
 
    char *q;
-   // pm is a pointer to character and p is pointer to integer
+   // q is a pointer to character and p is pointer to integer
    // so for that reason we will do typecasting
    // we will typecast p to character pointer and then assign the value
    q = (char *)p; // typecasting
