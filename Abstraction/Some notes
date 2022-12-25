@@ -1,0 +1,31 @@
+/*
+Abstraction -> Abstract methods are such methods which will have only method signature which does not have any body.
+            -> Abstract methods are those methods which will not have any implementation , which will not have any body only the method signature will be there.
+            ->In Java in class we can have a methods without any implementation means we can have a methods without any body only the signature is there
+                     for eg : public void fly(); // error - > not accepted without body
+                            : public void fly(){ } //accepted 
+                            : abstract public void fly(); // also accepted 
+            -> Even if only method is abstract in class them compulsorily you have declare that class also abstract
+                     for eg : abstract class plane
+                              {
+                                  abstract public void fly();
+                                  public void takeOff();
+                              }
+            -> We cannot instantiate(object creation) object class.
+            -> abstract - incomplete.
+            -> abstract class can be child class it can never be final class.
+            -> abstract method - no body only signature.
+            -> abstract class - both normal body + abstract method
+            
+            
+                                | Regular Java | Abstract class | Final
+-----------------------------------------------------------------------------
+Inheritance                     | ✅                           |        ✅                             |     ✅
+Abstract method                 | ❌                           |         ❌                            |     ❌
+Variables                       | ✅                           |         ✅                            |     ✅            
+Object   instantiation          | ✅                           |         ❌                            |     ✅            
+
+
+
+*/ 
+
