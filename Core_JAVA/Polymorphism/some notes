@@ -1,0 +1,12 @@
+Polymorphism -> Many / multiple forms
+             -> Reduces the size
+             -> Compile time Polymorphism
+             -> Run time Polymorphism
+
+1. Compile time Polymorphism
+-> Early Binding
+-> Method overloading
+
+2. Run time Polymorphism
+-> Late Binding
+-> Method over-riding
