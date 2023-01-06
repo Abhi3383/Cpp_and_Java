@@ -1,0 +1,76 @@
+👉 Interface :
+             Requirement specification => blue print of class
+             
+👉 Abstraction - Hiding the actual interpretation , whatever happening bts we're hiding it.
+👉 Abstraction can be achieved by -> Abstract class (o to 100%) 
+                                 -> Interface(100%)
+                                 
+👉 Interface - Interface is a collection of public abstract methods  
+            - 100% abstraction can be achieved by interface 
+            - interface helps to achieve standardization  
+            - it can act as a blueprint of the class 
+            - by default all the methods are public and abstract 
+            - one interface can have multiple implementation 
+            - we can achieve Polymorphism using interface 
+            - We can create reference of an interface 
+            - we cannot create object of abstract because abstract means incomplete 
+              similarly we cannot create objects of interface
+            - we can implement multiple interfaces but we cannot implement multiple extends(inheritance)
+              because implement contains public abstract methods 
+            - at one place both extend and implement is allowed 
+            - one interface cannot implement another interface
+            - one interface can extend another interface
+            - interface can have variable but by nature it is 
+              public static final int a=10
+              public so that it can be implemented by all the classes
+              static so that the variable can be shared by all the objects 
+              final so that no implementing class can change the value of the variable (data security)
+            - marker interface or tagged interface is allowed -> an interface without any method
+                                                              -> an interface which is empty
+                                                              -> interface demo{
+                                                              //empty
+                                                              }
+            - functional interface -> an interface which has only one method.
+                                   -> interface demo{
+                                          void add();
+                                      } 
+            - interface can have method with body  -> interface demo{
+                                                                void display(); //public abstract void display
+                                                                  void show(){    --------
+                                                                  S.O.P()                |--->error
+                                                                  }               --------  
+                                                                  default void show(){  //must use default   
+                                                                  S.O.P()    
+                                                                  } 
+                                                               }
+            - in interface we cannot create objects   
+              behavior of interface can be invoked by static method without creation of object because static are not objects dependent                                                 
+            - in interface we can have private methods                                                                          
+                                                               
+👉Functional Interface - Single abstract method
+                       - Lambda expression   
+
+👉Lambda expression - Implementation of Functional Interface
+                    - USing it we can give body for functionalInterrface 
+                      or Interface having one abstract method. If an interface more than
+                      one abstract method we cannot use it.                  
+                                                                                   
+                                                    
+                                                               
+                                                               
+                                                               
+                                                               
+                                                               
+                                                               
+                                                               
+                                                               
+                                                               
+                                                               
+                                                               
+                                                               
+                                                               
+                                                               
+                                                               
+                                                               
+                                                               
+                                                               

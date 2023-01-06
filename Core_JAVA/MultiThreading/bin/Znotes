@@ -1,0 +1,652 @@
+WrapDemo.java:10: warning: [removal] Byte(byte) in Byte has been deprecated and
+marked for removal
+Byte g1 = new Byte(grade); // wrapping
+JDK9 constructor usage is deprecated use "valueOf"
+can we write our own method in runnable interface or only run() is allowed in
+runnable interface?
+inbuilt class/interface can't be modified, we need to just take the benift.
+if any excepiton occur in one thead is there any effect on other thread in program?
+MulitThreading -> Best suited only when tasks are indepedent of each other
+It is choose to improve the application performance
+
+by using CPU time effectively.
+main() --------> t1---------> t2
+Thread => seperate stack for execution
+3 Threads -> 3 seperate Stacks
+if main method is present in program,that means automatically thread is created for
+main thread,or
+we need to manually create a thread for main method?
+sir can you please explain why hder sir said that main thread is not named after
+main i did
+not understood that conecpt??
+default thread creation happens first ? or bringing the method to the runtime stack
+area first ? could you clarify pls
+
+main() is loaded from method Area to stack and thread will start the
+
+execution.
+
+JVM will create one thread with that thread it starts the execution.
+When the execution starts the stack should be given for the Thread.
+Inside stack the body of main method is available so the stack name is
+
+"main".
+sir in single run() example little confusion came, all the threads created and
+linked....
+but there is if-else condition ...so once one thread get executed then only others
+will get chance ?
+Ans. totally depends on ThreadScheduler Algorithm(part of JVM)
+At what time thread go to dead state : for example t1.join(); -> for this when will
+t1 will be in dead state?
+once the complete execution of t1 is done only then Thread will enter into
+dead state.
+Life cycle of thread is same as "Life cycle of Human Being".
+new/born ----------------> Ready/runnable -----run()-----> running
+state--------finsished with execution---------> dead state
+Q>
+is multithreding with sigle run method used in real time or in industry level
+projects?
+MultiThreading -> Many tasks
+1 Thread --> 1 Task
+can duck the exception in run method when thread.sleep method is used in run
+method...?
+interface Runnable{
+public void run();
+
+}
+
+Q>at first point of entry jvm will look forward for public static void method and
+later invoke
+main thread without main method no java application will start to work is it
+correct?
+yes,it results in Exception.
+Q> Can write our own custom Scheduler ?
+We can write but for this sequence we don't have any "SRS"(interface)
+in thread class constructor what all the lines will be there?
+Thread class constructor will have a call to Object class constructor.
+Q>
+sir at the starting when hyder sir print thread name,priority and method name,it
+was printing
+main,5 and main,how 5 cames as a priority for main thread?
+JVM will give defautl priorirty for the main thread.
+Default priority is "5".
+ContextSwitching => Switching the control from one thread to another thread by
+ThreadScheduler is called "ContextSwitching".
+q1. why is it considered that threads are faster in contect switching also?
+ContextSwitching in mulithreading is done by JVM(program) compared to
+ContextSwitching done by OS
+since os is not involved we say ContextSwitching is faster at threads level.
+q2. what does, Threads use shared memory area mean?
+In mulitThreading application jvm will maintain the stack region for
+sepearte threads and these regions
+data can be interchanged b/w threads, so we say Threads works in Shared
+memory.
+if run method was called inside start method then what is the difference between
+calling direct run method and start method?
+Thread is a class present in "java.lang.Thread"
+Thread class start method
+
+1. Register Thread with ThreadScheduler
+2. It performs all low level memory activities(usage of shared memory)
+
+3. It makes a call to run()
+Thread t1=new Thread();
+t1.run();
+sir please explain, is it possible to start thread two times, & can we directly
+call the
+run() instead start(), multiple time this question asked to me while i am giving
+interview.
+Thread t1=new Thread();
+t1.start();
+t1.start();//IllegalThreadStateException
+Q>
+Integer i=12;//AutoBoxing using valueOf()
+System.out.println(i);//i.toString() will be called so "12" in String format.
+System.out.println(i+7);//19(Integer Object) will be printed.
+Q>
+Integer i=new Integer("20");
+
+Integer i2=new Integer("21");
+System.out.println(i2);//calls i2.tostring() to print the data
+System.out.println(i+i2);// System.out.println(20+21);//41 will be printed.
+If 3 threads are in runnable state and if thread scheduler has given control to say
+thread 1 and if it's not going to sleep or wait or blocked state in between will it
+complete it's execution first or in between will thread 2 or 3 will begin it's
+execution
+Thread-1 -> If it is not entered into sleeping state/waiting state then it will
+complete the execution
+Then the T.S will give control to other thread(T2,T3)depends of Algorithm.
+can we start a thread again, Sir?
+Ans.No
+why does for the same application, let's say just incrementing variable by one each
+time by multiple threads,
+we get different outputs each time? why is it so
+Ans. Becoz of Concurrency.
+How ThreadScheduler decide which thread to help chance ? And is ThreadScheduler
+behave like queue ?
+It is not in the hands of the programmer,totaly depends on the vendor
+algorithm.
+byte bb=12;//compiler will treat as "int", but the datatype u supplied is byte
+where the value is with in the range.
+Byte b=Byte.valueOf(bb);
+short s=153;//compiler will treat as "int", but the datatype u supplied is short
+where the value is with in the range of short
+Short S=Short.valueOf(s);
+Sir,Above Examples working fine but In below example, why we can't to pass value
+directly in valueOf() method
+Byte b1=Byte.valueOf(11);//compile time
+Short S1=Short.valueOf(44);//compile time
+Q>
+Sir, We have main thread to execute. In the main method consider we have two
+threads. To enter the two
+threads in running state we need to have a delay in the currently running thread?
+
+main(){
+
+Thread t1=new Thread();
+t1.start();//create a seperate stack for 't1' and inform
+
+Scheduler to schedule the Thread.
+
+Thread t2=new Thread();
+t2.start();
+
+}
+
+need one example for converting primitive to string type
+String s= Integer.toString(10);
+System.out.println(s);
+Q1.****if run method was called inside start method then what is the difference
+
+between calling direct run method and start method?******
+Q2.if main thread has default priority as 5 then wt will have 1,2,3,4 and why 5
+will execute first instead of 1,2,3,4 and
+wt are those whose has priority as 1,2,3,4?
+public static void main(String[] args) {
+
+Demo d = new Demo();
+d.start();
+System.out.println(d.getName());
+System.out.println(d.getPriority());
+
+System.out.println(d.getState()); //TIMED_WAITING what it means?
+}
+Actually singly thread is being executed in runningstate then how we are calling it
+as multiple task at a time
+overall application -> multiThreading
+JVM perspective -> it is single threading only
+if we have created a t1 thread inside main and t1 got exception then entire
+remaining execution part of main thread also stops?
+class Demo extends Thread{
+public void run() {
+int c= 10/0;
+
+}
+}
+class Test{
+
+public static void main(String[] args){
+Thread t =new Thread(new Demo());
+t.start();
+System.out.println("hello");//prints becoz seperate
+
+stack(Thread scheduler control)
+
+}
+
+}
+output: depends on T.S(if main thread is given a chance then hello) otherwise
+"Abnormal termination".
+
+
+is there zombie thread?
+Zombie -> A process which is getting executed without any parent.
+Threads -> Jvm will create main thread----> using main thread -> our threads
+
+MainThread(P) -------------> UserDefinedThread(Child)
+we are not making the main to daemon thread then y it is showing the exception
+DaemonThread-> A thread which runs in the background and supports other
+threads
+
+are called "Daemon thread".
+Main thread is not a Deamon thread it is normal
+
+thread.
+
+Excpetion will come only if
+a. u start a thread and then try to make it as
+
+"Daemon".
+can we invoke garbage collector implicitly sir ?
+yes ,it is possible through finalize().(Garbagecollector topic)
+Q> Can we create our own immutable class?
+
+Immutable -> Once object created with a data,if we try to make a change
+
+then
+
+that change will not happen on the same object
+
+rather new Object
+
+will be created.
+
+eg: String,Wrapper class.
+
+eg:
+class CreateImmutable{
+//instance variable
+private int i;
+//constructor
+CreateImmutable(int i){
+this.i=i;
+}
+//instance method
+public CreateImmutable modify(int i){
+
+if(this.i ==i)
+return this;//return current object
+else
+return new CreateImmuatable(i);//return by creating
+
+new object
+}
+
+}
+public class Demo{
+public static void main(String[] args){
+
+CreateImmutable c1= new CreateImmutable(10);
+CreateImmutable c2= c1.modify(10);
+CreateImmutable c3= c1.modify(100);
+System.out.println(c1==c2);//true
+System.out.println(c1==c3);//false
+
+}
+}
+is it possible to set priority for daemon threads? if yes then is this legal or
+possible
+
+: t1.setPriority(10) where t1 is daemon thread?
+
+Daemon thread priority if u give then also no impact as they run behind
+
+the main thread
+synchronized
+
+When multiple threads tries to act on single resource simultaneously
+
+there would be a problem
+
+of "Data Inconsistency". This problem can be avoided through
+
+"synchronized keyword".
+
+synchronized can be applied at 2 levels
+a. method level
+
+a. instance method level-> JVM will put lock of
+
+the Thread at Object level
+
+b. static method level -> JVM will put lock of
+
+the Thread at class level.
+b. block level
+
+class Demo{
+public synchronized void m1(){
+}
+public synchronized void m3(){
+}
+public static synchronzied void m2(){
+}
+public static synchronzied void m4(){
+}
+public void m5(){
+}
+}
+Threads
+t1-> m1()[Object level lock is required]
+t2-> m3()[t2 will be waiting till object level lock is released by t1]
+t3-> m2()[Class level lock is required]
+t4-> m4()[t4 will be waiting till Class level lock is released by t3]
+t5-> m5()[No lock is required]
+Hi sir what happens if we create two threads and assign them with same priority.
+Will conflict occur?
+No, becoz TS uses differetnt algorithm to assign the cpu time.
+how a string is used as a resource in synchronized block
+syntax: synchronized(object){
+
+}
+
+why main thread has default priority of 5 as max priority allowed is 10 for higher
+priority
+JVM thread priority
+
+1 5 10
+MIN AVG MAX
+
+Thread.sleep(10) how it invoke sleep for current thread?
+Thread.currentThread().sleep(1000);
+pubic class Thread{
+
+public static void sleep(int millisecond){
+
+//logic of sleep
+
+}
+
+}
+If join() is not best case, what’s its purpose please?
+task are dependent on each other and they are such that without completeing
+one
+task other task should not be continued, in these scenarious we use "join()".
+eg:
+wedding card distrubution of book wedding
+printed wedding card hall
+t1 t2
+t3
+
+|
+
+|
+
+|
+
+|
+
+t1.join()
+
+t2.join()
+if we give high priority for thread1 and lower priorities for thread2 and 3 will
+thread1 go to
+running state first or still it depends on thread scheduler's internal logic?
+thread1 -> 10
+thread2 -> 1
+thread3 -> 1
+since the thread1 is having high priority it will enter into running state.
+b/w thread2 and thread3 Threadscheduler decides whom to give the cpu time.
+how can we say stringbuffer is synchronized,reason?
+StringBuffer -> Jdk1.0
+
+All the methods present in StringBuffer are synchronized
+
+so we say the StringBuffer
+
+resource is "synchronized".
+Any resource if it is synchornzied it means the resource
+
+is "Thread safe".
+how to check how mamy threads are runing currently
+Thread.isAlive() -> returns boolean value through which u can check
+
+vch thred is alive.
+
+q. sir, as you said in try(R) R should be the classes which implement
+AutoClosable(I),
+so are there any resource classes which do not implement it but are required in our
+programming?
+In that case we should write finally block, right??
+try(R) ----->An object which implements java.io.AutoCloseable
+multiThreading-> resource it is any Object
+if u r using try(R) compulsorily it should implement AutoCloseable otherwise use
+try{} catch(){}finaly{}
+can you pls explain the relationship (if any) between Java Thread, OS Thread and
+
+number of processors on the host?
+Java -> Architectural neutral
+
+it would not worry about the underyling os and its
+
+architecture becoz of JVM.
+
+OS -> os concepts and its alogrithms
+no of processors -> Microprocessor architecture.
+
+sir is it the rule that in case of single resources for multiple thread object we
+use synchroed keyword
+if required? or we can use synchrozed for different resources?
+synchronzied -> one resource used by multiple threads.
+
+to avoid data inconsistency we use "synchronized".
+Can we set main Thread priority less than user-defined threads? -> please answer
+main() -> 5
+t1 -> change(t1.setPriority).
+
+If we change the priority order of execution will be different and we
+
+can't predict results.
+
+
+MulitThreading
+1. Different ways of creating a thread
+a. Extending Thread class
+b. Implements Runnable interface
+2. Setting a name and getting name from the Thread
+a. public void setName(String name)
+b. public String getName()
+
+Lifecycle of a Thread
+new/born -----start()--------> ready/runnable ---ts allocates cpu
+time---------> running----run() complets---------> deadstate
+3. Methods to prevent a Thread from execution
+
+a. join() -> To make another thread to wait till it finsihes the
+
+execution.
+
+b. sleep() -> To stop/pause the execution of a thread for
+
+sometime
+4. Synchronization
+
+=> this concept is applicable at method level and block level.
+=> if we apply synchronization at block level or at method level
+
+then only one thread
+
+is allowed to execute the block or a method.
+=> Advantage -> it resolves the problem of "Data
+
+Incosistencey/race condition".
+
+=> DisAdvantage->It increase the waiting time for other threads
+
+so it affects the peformance of the
+
+system.
+
+Note: In java we have 2 levels of lock
+
+a. class level lock => A thread which needs to execute static
+
+synchronized block/method needs
+
+class level lock.
+This lock is very unique at
+
+the class level.
+
+b. object level lock => A thread which needs to execute
+
+synchronized block/method needs
+
+object level lock.
+This lock is very unique at
+
+the Object level.
+InterThread Communication
+--------------------------------------
+Two threads should interact with each other, how?
+eg: Producer Consumer Problem
+ProducerEnd
+=> Producer duty is to produce the data and once the data is produced update
+the variable
+called "DataProvider" to true
+=> This action should be done by "Producer Thread"
+for (int i = 1; i <= 10; i++) {
+try {
+sb.append(i + ": ");
+Thread.sleep(100);
+System.out.println("appending");
+} catch (InterruptedException e) {
+
+e.printStackTrace();
+}
+
+}
+dataProvider = true;
+Consumer End
+=> Consumer Thread should consume the data produced by the Producer
+=> Consumer Thread should check the dataprovider status,if it is true
+consume the data
+otherwise sleep for some time and again check for the dataprovider
+status
+while(producer.dataProvider == false) {
+
+try {
+Thread.sleep(10);
+} catch (InterruptedException e) {
+e.printStackTrace();
+}
+
+}
+//consume the data produced by the producer
+System.out.println(producer.sb);
+In the above code when the interaction happens b/w 2 threads, always the consumer
+thread is ready for
+consumption,but the consumer thread will get the data only when the dataProvider
+value is set to true.
+This increases the waiting time of a thread and makes the cpu time idle,through
+which communication b/w
+2 threads wont be efficient.
+To reduce the effieciency problem we use the methods given by Object class
+a.wait()
+b.notify()
+c.notifyAll()
+Note:
+wait(),notify(),notifyAll() methods are present in Object class not in Thread
+class.
+If any thread has to call wait(),notify(),notifyAll() then that thread should be
+the owner of the thread.
+We say the thread as owner iff the thread has the lock of the object.
+If the thread calls notify(),notifyAll() and wait() and the thread is not a owner
+then it would result in
+RE: "IllegalMonitorStateException".
+wait() -> Whichever thread is excpecting the updated result from the object that
+thread should call wait method.
+
+Whenever wait() is called automatically that thread will release the
+
+lock of the Object to the other
+thread to use that lock.
+
+notify() -> Which ever thread wants to update the Object, that thread should
+call notify() to the Other thread(one).
+notifyAll() ->Which ever thread wants to update the Object, that thread should call
+notifyAll() to the Other
+
+waiting threads(many)
+
+Note: only wait(),notify(),notifyAll() have the mechanism to release the
+automatically, where as sleep(),join() these methods
+can't release the lock.
+FAQ:
+Why wait(),notify(),notifyAll() methods are part of Object class, why not Thread
+class?
+ans. These methods will be used by the thread on different types of Objects like
+StringBuffer,Student,Customer,Account,......
+For every object the parent class is Object,so these methods comes from
+object class.
+=>methods like join,yield,sleep will be applied only on Threads, so only
+these methods
+are part of Thread class not Object class.
+What is the difference b/w notify() and notifyAll()?
+notify() -> It will give notification only to one thread which needs the lock
+of that object
+notifyAll() -> It will give notification to mulitple threads which needs the
+lock of that object.
+Example of wait() and notify()
+---------------------------------------
+class Demo extends Thread
+{
+//data is updated
+int total = 0;
+public void run(){
+//producer thread
+synchronized(this){
+
+System.out.println("Child thread starts the calculation");//step-
+2
+
+//sum of first 100 numbers
+for (int i =1;i<=100 ; i++)
+{
+total = total + i;
+}
+System.out.println("Child thread is giving the notifcation
+
+call");//step-3
+
+this.notify();
+}
+}
+}
+class Test
+{
+public static void main(String[] args) throws Exception
+{
+Demo d = new Demo();
+d.start();
+//consumer thread
+synchronized(d){
+System.out.println("Main Thread is calling wait()
+
+method....");//step-1
+d.wait();
+
+System.out.println("Main Thread got the notification
+
+call");//step-4
+
+System.out.println(d.total);//5050
+}
+}
+}
+Output
+Main Thread is calling wait() method....
+Child thread starts the calculation
+Child thread is giving the notifcation call
+Main Thread got the notification call
+5050
+Note:
+Demo class had total variable
+Main thread[5]
+
+=> needs Demo class total variable with proper value(5050)
+=> lock is applied on Demo object and call wait()
+=> wait() releases the lock of Demo object and main thread enters into
+
+sleeping state.
+User Defined Thread[5]
+
+-> should update total variable in Demo class and it should send the
+
+notification
+
+-> notify() is used so the code should be in synchronize region
+-> it needs the lock of Demo object, now the calculation is started to
+
+update.
+
+-> it will give the notification
+
+Producer consumer problem
+--------------------------------------
+refer : InterThreadCommunicationApp,
+InterThreadCommunication.png
+Writing the code in lambda Expression style
+-----------------------------------------------------------
+
+refer: LambdaExpressionApp
