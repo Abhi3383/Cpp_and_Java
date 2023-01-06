@@ -1,0 +1,245 @@
+RunTime - RunTime error - faulty logic
+        - Exception - not because of logic but faulty input
+        
+-> If we write proper syntax then it will not give compile time error
+      //System.out.println()  ❌ error -> Compile time error
+      //System.out.println(); ✅
+      
+-> If we write
+ public class Launch1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        System.out.println("Creating array below");		
+        int a[]= new int[9999999999];
+	}
+
+}
+
+then we get error : The literal 9999999999 of type int is out of range 
+	                at Launch1.main(Launch1.java:7)
+which is a RUN TIME ERROR
+
+👉Perform exception handling using 3 commands try, catch and throw
+1) try -> whatever's the riskiest part in the code put it in try {
+                                                                 \\body
+                                                                 }
+2)Catch()-> later write one corresponding catch block
+         -> in the catch block you have to pass exception and a reference.
+              catch(Exception e){
+                         //body
+                        }
+             //Exception is the parent of all the exception it is a class in java
+             but thats not a good approach for try block we should have different catch message.
+             
+-> Whenever during run time if a there's an error JVM will check if there's a user
+   defined error then it will go to the catch block and print accordingly.          
+   
+-> In java single try block and multiple catch blocks is possible
+->We write one generic catch block of exception e to counter unthinkable error
+-> There can be many try and catch blocks for a program.
+   
+👉 When the exception is generated we can do 3 things :
+1) Handle it  - handle the exception using (try-catch)
+2) Duck the exception (throws)
+3) Re-throw the exception (try,catch,throw,throws,finally)
+   
+👉 Ducking the exception - It means exception handling on method only
+   public void division() throws ArithmeticException //ducking exception.
+   {
+			System.out.println("Welcome to division performing application");
+			Scanner sc = new Scanner(System.in);
+			System.out.println("Enter the first number to divide");
+			int a = sc.nextInt();
+			System.out.println("Enter the second number");
+			int b = sc.nextInt();
+			int res = a / b;
+			System.out.println("The result is " + res);
+			System.out.println("Thank you for using our application");
+	}
+   
+   	It is used to handle exception in run time only.
+   	Ducking will not handle the exception, it will lead to abnormal termination only.
+ 
+👉Whenever compiler is forcing you to handle exception during compiler time only
+  such type of exceptions are called checktive sessions.
+  Checktive sessions are those sessions which are being checked during compile time.
+   
+   public static void main(String[] args) //throws error 
+   {
+		// TODO Auto-generated method stub
+		System.out.println("First line");
+		Thread.sleep(5000);
+		System.out.println("Last line");
+    }
+    
+    public static void main(String[] args) throws Exception  // will work
+    {
+		// TODO Auto-generated method stub
+		System.out.println("First line");
+		//Below line means it will wait for 5s before showing the next message
+		Thread.sleep(5000);
+		System.out.println("Last line");
+	}
+	
+👉 Throw keyword is used to re throw an exception (re throwing means throwing the handled exception object, after handling you are throwing).
+   Finally - used to execute a message in any condition if there's any exception or not or exception re thrown or not
+   
+   Exception Raised    |   Exception Handled   |  Finally block Executed
+   --------------------------------------------------------------------------
+    NO                 |      -                |   yes        
+    yes                |      NO               |   yes        
+    yes                |      -                |   yes        
+    
+    
+👉 Finally block dominates the try block 
+   System.exit(0); will dominate the finally block
+👉 If there's a error in catch block then only again finally block will be executed
+👉 Statements return after catch block depends if they have been re thrown or not
+   - If re thrown then the statements will not be executed
+   - If not re thrown then the statements will be executed.
+   - If an exception is raised and the corresponding catch block is not matched then 
+     the statement will not be executed
+     
+👉 Methods to Print Exception Information
+
+Throwable - getMessage()
+          - toString()
+          - printStacktTrace()
+          
+1) e.getMessage() - Prints the description of the exception
+                  - Example : / zero
+                  
+2) e.toString()   - Prints the name and the description of the exception
+ 				  - Example : ArtihmeticException / by zero
+ 				  
+3) e.printStackTrace() - Prints the name and the description of the exception along with the stack trace.
+                                                                                                                      
+👉
+                                                                                                                           
+									                                     Object
+									                                      ^
+									                                      |
+									                                   Throwable
+									                                      ^
+									                                      |
+					               -------------------------------------------------------------------------------------------------
+								   |                                                                                              |
+							     Error                                                                                        Exception 
+									|                                                                                             ^ 
+                -----------------------------------------------------	                                                          |                                
+				|                   |                               |                  ----------------------------------------------------------------------------------------
+		VirtualMachine Error     Linkage Error                  AssertionError         |                                          ^                   ^                       ^                  
+		 ^                        ^                                                RunTime Exception                              |                   |                       |
+		 |-OutOfMemoryError       |-ExceptionInitializeError                            ^                                     IOException    InterruptedException        SQLException
+		 |-StackOverflow error              .                                           |-ArithmeticException                                              
+								            .                                           |-NullPointerException                                                               
+								            .                                           |-IndexOutOfBoundException                                                            
+         	                                .                                           |    ^
+         	                                                        	                |    |-ArrayIndexOutOfBoundException
+                                                                                        |    |-StringIndexOutOfBoundException                  
+                                                                                        |-Illegal Argument Exception     
+                                                                                        |     ^
+                                                                                        |     |-NumberFormatException 
+                                      
+RuntimeException  				  -	 Unchecked Exception
+Error  							  -  Unchecked Exception                                                                                     
+ArithmeticException               -  Unchecked Exception
+ArrayIndexOutOfBoundsException    -  Unchecked Exception
+NullPointerException 			  -	 Unchecked Exception
+
+SQLException 					  -  Fully Checked Exception
+IOException                       -  Fully Checked Exception
+InterruptedException              -  Fully Checked Exception
+
+Throwable 						  -  Partially Checked Exception
+Exception  						  -  Partially Checked Exception
+
+FileNotFoundException
+
+
+👉
+                       THROW                                |             THROWS
+------------------------------------------------------------------------------------------------------------------
+-> Inside a method                                          |   Method signature
+-> Used to re throw an                                      |   Duck an exception also to throw
+-> Lines below throw keyword will not get executed          |   It gets executed anyway.
+-> This method owns up the responsibility of handling the   |   The method delegates the responsibility of handling 
+   exception by itself.                                     |   the exception to the caller.
+                                                                                                   
+👉 Checked exception    - Checked means if a compiler is checking only if whether there will be execution or not.
+                          and the compiler will force you to handle the exception.
+   UnChecked exception  - If exception is occurring during the compile time
+
+
+👉 Throw an exception object manually
+			class{  
+			public static void main(String[] args)
+			{
+			   throw new ArithmeticException("/by zero")
+			 } ----- -----------------------------------    
+			}    ^             ^
+                 |             |
+             Handling over   Creating an
+             the exception   exception object
+             object to JVM   explicitly
+             
+             
+ 👉      class Demo throws Exception  //Invalid
+		{
+			Demo () throws Exception //Valid - Because exception can be delegated to the caller
+			{
+			--------------
+			--------------
+			--------------
+			}
+			void alpha() throws Exception //Valid - Because exception can be delegated to the caller
+			{
+			    --------------
+			    --------------
+			    --------------
+			}
+		}
+                
+👉    If a parent class is not throwing any exception then for the child class it is not compulsory to throw, 
+    but then if it needed it can throw only unchecked exception not checked exception
+  
+    If a parent class is throwing unchecked exception then for the child class it is not compulsory to throw.
+    but then if it needed it can throw only unchecked exception not checked exception
+  
+ 👉 Nester Try-Catch
+
+class Launch{
+     public static void main(String[]
+     {
+      try
+      {
+		System.out.printin ("Inside out try");
+		try
+		{
+         System.out.println( "Inside inner try");
+         System.out.println (10/0);
+         }
+         catch(ArithmeticException e)
+         {
+         System.out.println("Inside inner catch");
+         }
+         System.out.println("Outside inner try-catch");
+        }
+        catch(Exception e)
+        {
+        System.out.println("Inside outer catch");
+        }
+        finally
+        {
+        System.out.println("Inside outer finally");
+        }                                                                                                                        
+       }                                                                                                               
+      }                                                                                                               
+    
+    
+O/p : Inside outer try
+      Inside inner try
+      Inside inner catch    
+      Outside inner try-catch
+      Inside outer finally
