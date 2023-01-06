@@ -1,0 +1,64 @@
+Static variables - also called as class variables because of one copy of data among all the objects of class.
+                 - common copy of data has to be shared among all object of class.
+                 
+Static block - If you want to execute something even before main method or during class loading itself for that purpose we use static block.
+             - We also use it to initialize the value for static variables
+
+-> We cannot access normal instance variable in instance block/method.
+-> As as soon as the object gets created 2 things gets automatically invoked in back end.
+1)Non-static block (First this gets executed)
+2) Constructor (then this)
+If there's non-static block in the code JVM will load that block into the constructor and it will execute first
+after executing the body of non static block whatever actual body was there in the constructor that will be executed.
+
+->Flow of code
+
+-Static variable -> Static block -> Static method(main,disp2) 
+     -> instance variables -> instance initialization block(non static block) 
+                                              -> constructor -> method(non-static)
+
+-> gets initialized during the creation of object - instance initialization block(non static block) , constructor
+
+-> In the LaunchFarmer program
+-As soon as the object gets created memory gets allocated in the heap area then according to the variables blocks of those variables gets created,
+ main function works in heap area
+
+ Stack Area                    Heap Area
+------------------------    --------------------------     
+|                      |    |                        |
+|                      |    |Address of Farmer object| 
+|                      |    |         1000           |    
+|   --------------     |    |    --------------      |
+|   |            |     |    |    |   pa       |      |
+|   |  main()    |     |    |    |   si       |      |
+|   |            |     |    |    |   td       |      |
+|   |   -----    |     |    |    --------------      |
+|   |            |     |    |     Static block       |
+|   |   -----    |     |    |    --------------      |
+|   |   f1       |     |    |    |            |      |
+|   |   f2       |     |    |    |  ri(common)|      |
+|   |            |     |    |    |            |      |
+|   --------------     |    |    --------------      |
+|                      |    |                        |
+|                      |    |                        |
+|                      |    |                        |
+------------------------    --------------------------
+
+Static variable                          | Non-static variable
+------------------------------------------------------------------------------
+-Can be accessed directly with           | -We need to create object here 
+class name if not private                |
+eg : Arrays.sort(null); (inbuilt method) |                 
+-memorial allocated at the time          | -memorial allocated each time the  
+of class loading only once.              |  object is created
+-also called as class variables          | -also called as instance variables 
+
+-> Non static block - also called as Instance initialization block 
+                    - non static block gets initialized during creation of objects before constructor.                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
