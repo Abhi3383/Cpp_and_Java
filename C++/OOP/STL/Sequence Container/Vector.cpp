@@ -1,10 +1,42 @@
 #include <bits/stdc++.h>
 using namespace std;
+/*
 
+Vectors -> dynamic arrays
+        -> resize when insert/delete elements
+        -> contiguous memory allocation(stored in cosecutive or sequential way)
+        -> vector<data_type> vector_name; (vector variable)
+        -> vector<data_type> vector_name(size); (vector array)
+
+# capacity >= size
+_______
+|  |  |    size=2, capacity=2
+|__|__|
+  0  1
+_________
+|  |  |  |  size=3, capacity=4
+|__|__|__|
+  0  1  2
+________________
+|  |  |  |  |  |  size=5, capacity=8
+|__|__|__|__|__|
+ 0  1  2   3  4
+
+->Capacity increases in terms of 2 raised to the power.
+
+1) v.reize(size);
+2) v.push_back(element);
+3) v.insert(position,element);
+4) v.begin(); <- first element
+5) v.end(); <- end element
+6) v.pop_back(position);
+7) v.erase(position,element);
+
+*/
 int main()
 {
     // another way to write cout operation
-    std::cout << "Hello world" << endl;
+    cout << "Hello world" << endl;
 
     // Vector is a dynamic array
     vector<int> v;
