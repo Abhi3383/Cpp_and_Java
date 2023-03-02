@@ -48,11 +48,7 @@ public:
         a = c.a; // a is from c4 and c.a is from c1
         b = c.b; // b is from c4 and c.b is from c1
     }
-    void set(int x, int y)
-    {
-        a = x;
-        b = y;
-    }
+
     void showData()
     {
         cout << "\nreal = " << a << " , "
