@@ -1,0 +1,10 @@
+1.  In PQ1 we have used 3 pointer approach
+2.  In PQ2 we have used Dutch National Flag algo.(2 pointer approach)
+3.  In PQ3 we have used negative marking method 
+    and mapping array values with index 
+4.  In PQ4 we have used mapping array values with index
+    and Sorting swapping method
+5.  In PQ5 we have used Hashing
+    (unorderd_map dosen't sort the elements automatically)
+6.  In PQ6 we have used Set
+7.  In PQ9_ a and PQ9_b we used important formulas

@@ -1,0 +1,10 @@
+1.  In PQ1 we have used 
+    For 1st solution :2 pointer approach with while loop and set
+    For 2nd solution :Set and for loop
+    For 3rd solution :Binary search and set
+2.  In PQ2 we have used 
+    For 1st solution :2 pointer approach (in better and advanced way )
+    For 2nd solution :Set and for loop (in better and advanced way )
+    For 3rd solution :Binary search and set
+3. In PQ4 target is to allocate all the books thats we returned false in "if"
+4. In PQ5 target is to allocate all the cows thats we returned true in "if"

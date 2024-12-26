@@ -1,0 +1,89 @@
+-> To initialise minimum value or store minimum value in variable 
+   we initialise the the variable with INT_MAX.
+   Similarly, to store maximum value in variable we initialise 
+   the variable with INT_MIN.
+
+-> These are Bitwise Operators (reference).
+    x & 1 produces a value that is either 1 or 0, depending on the least significant bit of x: if the last bit is 1, the result of x & 1 is 1; otherwise, it is 0. This is a bitwise AND operation.
+    x >>= 1 means "set x to itself shifted by one bit to the right". The expression evaluates to the new value of x after the shift.
+
+-> x & 1 is equivalent to x % 2.
+   x >> 1 is equivalent to x / 2.  
+   So, these things are basically the result and remainder of divide by two.
+
+   (n & 1) will check if 'n' is odd or even, this is similar to (n%2).
+   In case 'n' is odd (n & 1) will return true/1;
+   Else it will return back false/0;
+
+-> 
+In C++, We have defined a vector whose name is data. 
+data.size() and data.size() - 1 refer to different things when used with a vector.
+1.
+data.size():
+
+This returns the number of elements in the vector.
+For example, if you have a vector named data, data.size() will give you the total number of elements in the vector.
+
+std::vector<int> data = {1, 2, 3, 4, 5};
+std::cout << "Size of data: " << data.size() << std::endl; // Output: 5
+
+
+2.
+data.size() - 1:
+
+This expression is often used to represent the index of the last element in the vector.
+Since vector indices start from 0, data.size() - 1 gives you the index of the last element in the vector.
+This is useful when you want to iterate through the vector and access elements up to the last one.
+
+std::vector<int> data = {1, 2, 3, 4, 5};
+for (size_t i = 0; i < data.size(); ++i) {
+    std::cout << "Element at index " << i << ": " << data[i] << std::endl;
+}
+In this loop, i will take values from 0 to data.size() - 1, allowing you to access all elements in the vector.
+
+So, in summary, data.size() gives you the total number of elements in the vector, while data.size() - 1 is often used to represent the index of the last element in the vector.
+
+-> To find lenght of array or subarray we use : end - start + 1.
+
+-> To find first occurence of an element we can use
+    "lower bound" in built function
+    In lower_bound if element found it will return the index
+    of that element else it will return the next iterator
+-> To find last occurence of an element we can use
+    "upper bound" in built function
+    In upper_bound if element found or not it will return
+    the next iterator only.
+-> If in binary search we put condition like
+    1. s=mid, e=mid
+    2. s=mid+1, e=mid
+    3. s=mid-1, e=mid
+    4. s=mid, e=mid+1
+    5. s=mid, e=mid-1
+
+    then in while loop we have to use " while(s<e) "
+    else there is a high chance we will stuck in 
+    infinite condition loop. 
+-> If in binary search we put condition like
+    1. s=mid-1, e=mid+1
+    2. s=mid+1, e=mid-1
+
+    then in while loop we have can use " while(s<e) "
+    or " while(s<=e) ".
+
+-> To find mid, we can find it in following ways :
+        1. mid = (start+end)/2;
+        1. mid = (start+end) >> 1;
+        1. mid = (start+(end-start))/2;
+
+-> To find the difference b/w the first and last element of array
+    int arr[5]={1,2,3,4,5}
+    int ans = ans[ans.size()-1]-arr[0];
+
+-> When in questions it is asked to find minimum of the maximum we can
+   try to find the solution using binary search.
+
+-> Behaviour of cout is different of character/character pointers.
+    int a=5;                        char ch[10] = "Babbar";
+    int*ptr= &a;                    char *c = ch;
+    cout << ptr;                    cout << c;
+    O/p : 0xa54efff70c              O/p : Babbar

@@ -1,0 +1,9 @@
+1.  In PQ1 we created a freq. table for strings
+2.  In PQ2 we used 2 pointer approach and iaAlpha method
+3.  In PQ4 we used 2 pointer approach, inbuilt tolower function
+    and how to return directly using return from a bool function
+4.  In PQ5 we used hash set approach to map 2 arrays(important)
+5.  In PQ6 we used hash set approach(much better way).
+6.  In PQ7 we used both hash, map and unordered map(important).
+7.  In PQ9 we used sliding window method(important).
+8.  In PQ14 we used sliding custom comparaton on string(important).

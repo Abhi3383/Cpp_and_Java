@@ -1,1 +1,1 @@
-# My Project
+Just learning C++ and JAVA
